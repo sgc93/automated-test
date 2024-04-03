@@ -8,9 +8,13 @@ public class App {
         System.out.println("2. garix (search movie): ");
         System.out.println("3. youtube (search video in youtube): ");
         System.out.println("4. google (search for something): ");
+        System.out.println("5. have chat with AI");
         String webName = scan.nextLine();
-        System.out.println("Enter search query ");
-        String query = scan.nextLine();
+        String query = "";
+        if (!webName.toString().equals("5")) {
+            System.out.println("Enter search query: ");
+            query = scan.nextLine();
+        }
         scan.close();
 
         switch (webName) {
@@ -29,6 +33,10 @@ public class App {
             case "4":
                 Test testGoogle = new Test("google",  query);
                 testGoogle.test();
+                break;
+            case "5":
+                Chat chat = new Chat();
+                chat.startChat();
                 break;
             default:
                 System.out.println("you have entered wrong choice");
