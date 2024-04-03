@@ -47,10 +47,15 @@ public class Test {
         } else if (webName == "garix") {
             WebElement searchBox = driver.findElement(By.className("search__box"));
             searchBox.sendKeys(query);
-        } else if(webName == "ingit"){
+        } else if (webName == "ingit") {
             WebElement searchBox = driver.findElement(By.tagName("input"));
             searchBox.sendKeys(query);
         }
+        
+        System.err.println("title: " + driver.getTitle());
+        System.err.println("current url: " + driver.getCurrentUrl());
+        System.err.println("current class: " + driver.getClass().getName());
+        // System.err.println("page source: " + driver.getPageSource());
         
         
         try{
