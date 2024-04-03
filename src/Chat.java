@@ -19,10 +19,18 @@ public class Chat {
         WebElement searchBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("sendBtn")));
         searchBtn.click();
 
+        WebElement answer = wait
+                .until(ExpectedConditions.presenceOfElementLocated(
+                        By.xpath("(//div[@class='MessageItem_msg__C8oWx']/div)")));
+        WebElement textcontent = answer.findElement(By.tagName("span"));
+                System.out.println(textcontent.getText());
+
         try{
             Thread.sleep( 5000);
         } catch (InterruptedException e) {
             e.getStackTrace();
         }
+
+        driver.close();
     }
 }
